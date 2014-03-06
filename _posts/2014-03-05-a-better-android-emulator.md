@@ -23,17 +23,19 @@ it, you don't want to know. Luckily a better emulator is available using
  	This username and password is needed later to setup your virtual machine. 
  	Download genymotion, launch the dmg, and follow the instructions.
  
- 3. Setup a Virtual Device.
+ 3. Create a new Virtual Device.
  	Launch Genymotion and you should have an empty list of virtual devices.
  	Click add, you can use the filters or just scroll through the list to choose the device.
  	In this case I chose the Nexus 5. If your list of available virtual devices is empty,
  	you will need to sign in to your Genymotion account in the application.
+ 	
+ 	<img src = "{{ site.url }}/assets/VirtualDeviceList.png" style="max-width: 400px" />
  	 
  4. Start your new Virtual Device
  	In Genymotion application, choose the newly created virtual device and click play.
  	Wait for the virtual device to load. It should appear like a Nexus 5.
  
- 5. Deploy your Xamarin project to the new Virtual Machine.
+ 5. Deploy your Xamarin project to the new Virtual Device.
     When you run your Android application in Xamarin a popup window will appear where
  	you can select your device. If your new virtual machine is running, it will appear in
  	the list.
