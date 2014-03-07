@@ -8,7 +8,7 @@ pygments: true
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Yelling Lizard
+title : David Breyer
 tagline: Science Created Him. Now Chuck Norris Must Destroy Him
 author :
   name : David Breyer
@@ -80,9 +80,9 @@ JB :
   # Set 'provider' to false to turn commenting off globally.
   #
   comments :
-    provider : false
+    provider : disqus
     disqus :
-      short_name : jekyllbootstrap
+      short_name : davidbreyer
     livefyre :
       site_id : 123
     intensedebate :
