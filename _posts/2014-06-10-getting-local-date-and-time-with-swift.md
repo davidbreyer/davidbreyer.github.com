@@ -15,10 +15,7 @@ The code
 //
 //  main.swift
 //  ConsoleApp1
-//
-//  Created by David Breyer on 6/10/14.
-//  Copyright (c) 2014 David Breyer. All rights reserved.
-//
+
 
 import Foundation
 
