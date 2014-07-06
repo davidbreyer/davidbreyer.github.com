@@ -2,8 +2,8 @@
 layout: post
 title: "Czech Republic to Austria Bike Trip"
 description: ""
-category: 
-tags: [Travel, Cycling, Europe]
+category: Travel
+tags: [travel, cycling, europe]
 ---
 {% include JB/setup %}
 
