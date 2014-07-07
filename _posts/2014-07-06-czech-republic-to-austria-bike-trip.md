@@ -16,4 +16,5 @@ I am still been going through my photos and documenting places I visited and sta
 <img src = "{{ site.url }}/assets/czechrepublictoaustria/PragueToViennaSmall.jpg" style="max-width: 600px" />
 </a>
 
+<img src = "{{ site.url }}/assets/czechrepublictoaustria/PragueToViennaLarge.jpg" style="max-width: 600px" />
 You can see more photos on my <a href="https://www.flickr.com/photos/eberry/sets/72157644726187070/">Flickr album</a>.
