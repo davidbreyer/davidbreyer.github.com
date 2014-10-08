@@ -16,7 +16,7 @@ I'm David Breyer and I am a professional programmer, part-time traveler, and ama
 
 <p>
 You can find more information about me on <a href="http://www.linkedin.com/in/davidbreyer">LinkedIn</a> or follow my very infrequent musings on <a href="https://twitter.com/DavidBreyer">Twitter</a>.
-You can also get my iOS app, <a href="http://www.yellinglizard.com">Quiz Your Lizard</a>, on the App Store. Let me know what you think.
+You can also get my iOS app, <a href="http://www.yellinglizard.com">Quiz Your Lizard</a>, on the App Store.
 </p>
 
 <p>Recent Posts</p>
