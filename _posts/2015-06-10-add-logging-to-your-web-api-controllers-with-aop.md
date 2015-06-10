@@ -10,7 +10,7 @@ tags: [Web API, Unity, C#, Dependency Injection, Log4Net]
 <br/><br/>
 In part one we [added a log4net log to our Web API project using Unity]({% post_url 2015-06-09-logging-web-api-with-log4net-and-unity %}).
 
-In this part I will show how to create a class that runs a method before and after a your controller method, how to inject log4net into the filter, and how to add the filter to your controllers. This part also uses the same Nuget packages as part one.
+In this part I will show how to create a filter that runs a function before and after a your controller method, how to inject log4net into the filter, and how to add the filter to your controllers. This part uses the same nuget packages as part one.
 
 Step one is to create a web filter. In the example below there are three main parts.
 
