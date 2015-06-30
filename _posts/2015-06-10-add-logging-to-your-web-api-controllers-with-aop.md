@@ -18,9 +18,10 @@ Step one is to create a web filter. In the example below there are three main pa
 2.  OnActionExected will run after the requested controller method.
 3.  ILog property that is marked with a dependency attribute.
 
+
 <script src="https://gist.github.com/davidbreyer/ff2bc4bfd0d8fd4131fc.js"></script>
 
-If this filter executed now, the Log would be NULL. So in step two let’s use Unity to build up the filter. I added this method to the FilterConfig.cs file in the Web API project.
+If this filter executed now, the Log would be NULL. So in step two let’s use Unity to build up the filter. I added the RegisterFilterProviders method to the FilterConfig.cs file in the Web API project. The RegisterFilterProviders method will pass the current UnityContainer to the UnityActionFilterProvider that will build up the filter.
 <script src="https://gist.github.com/davidbreyer/973a5377debc079a6f15.js"></script>        
 
 Then you call this from RegisterGlobalFilters in the FilterConfig.cs:
