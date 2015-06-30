@@ -14,14 +14,20 @@ In this part I will show how to create a filter that runs a function before and 
 
 Step one is to create a web filter. In the example below there are three main parts.
 
-1.  OnActionExecuting will run before the requested controller method.
-2.  OnActionExected will run after the requested controller method.
-3.  ILog property that is marked with a dependency attribute.
-
+1. ILog property that is marked with a dependency attribute.
+2. OnActionExecuting will run before the requested controller method.
+3. OnActionExected will run after the requested controller method.  
+<br>
 
 <script src="https://gist.github.com/davidbreyer/ff2bc4bfd0d8fd4131fc.js"></script>
 
-If this filter executed now, the Log would be NULL. So in step two let’s use Unity to build up the filter. I added the RegisterFilterProviders method to the FilterConfig.cs file in the Web API project. The RegisterFilterProviders method will pass the current UnityContainer to the UnityActionFilterProvider that will build up the filter.
+If this filter executed now, the Log would be NULL. So in step two let’s use Unity to build up the filter. 
+
+There are two components to using Unity to buildup the filter.
+
+1. Add a class, UnityActionFilterProvider, to your project. This will buildup the filter when called from the FilterConfig.
+2. Add the RegisterFilterProviders method to the FilterConfig.cs file in the Web API project.
+<br>
 <script src="https://gist.github.com/davidbreyer/973a5377debc079a6f15.js"></script>        
 
 Then you call this from RegisterGlobalFilters in the FilterConfig.cs:
