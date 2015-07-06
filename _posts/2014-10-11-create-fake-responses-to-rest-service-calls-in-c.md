@@ -4,8 +4,10 @@ title: "Create Fake Responses to REST Service Calls in C#"
 description: ""
 category: Programming
 tags: [c#, Unit Testing, Web API]
+meta_description: 'Create Fake Responses to REST Service Calls in C#'
+browser_title: 'Create Fake Responses to REST Service Calls in C#'
+comments: true
 ---
-{% include JB/setup %}
 
 
 Creating mocks for your service calls is made easy with the use of the HttpClient and the FakeResponseHandler. The FakeResponseHandler inherits from the DelegatingHandler and will return a response based on the registered URI.

@@ -4,8 +4,10 @@ title: "Configuring Log4Net with Unity"
 description: ""
 category: Programming
 tags: [Unity, C#, Dependency Injection, Log4Net]
+meta_description: 'Configuring Log4Net with Unity in a C# Project'
+browser_title: 'Configuring Log4Net with Unity'
+comments: true
 ---
-{% include JB/setup %}
 
 <br/><br/>
 This is part one of a three part series on adding logging to a Web API project using AOP (Aspect Oriented Programming). The following code is a simple way to inject logging into your web api project using log4net and Microsoft Unity.

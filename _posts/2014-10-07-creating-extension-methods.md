@@ -4,8 +4,10 @@ title: "Creating Extension Methods"
 description: "How to create extension methods in C#"
 category: Programming 
 tags: [c#, c# basics]
+meta_description: 'How to create extension methods in C#'
+browser_title: 'Creating Extension Methods'
+comments: true
 ---
-{% include JB/setup %}
 
 A useful feature of C# is the ability to add functionality to existing classes. For example, you might want a reverse function on the String class. You would then be able to call your new function this way: myString.Reverse().
 

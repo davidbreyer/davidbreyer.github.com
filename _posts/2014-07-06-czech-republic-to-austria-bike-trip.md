@@ -4,8 +4,10 @@ title: "Czech Republic to Austria Bike Trip"
 description: ""
 category: Travel
 tags: [travel, cycling, europe]
+meta_description: 'Czech Republic to Austria Bike Trip'
+browser_title: 'Czech Republic to Austria Bike Trip'
+comments: true
 ---
-{% include JB/setup %}
 
 <img src = "{{ site.url }}/assets/czechrepublictoaustria/StadtMelkSmall.jpg" style="max-width: 600px" />
 

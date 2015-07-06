@@ -4,8 +4,10 @@ title: "A Better Android Emulator"
 description: ""
 category: Mobile Development 
 tags: [Xamarin, Android, OSX]
+meta_description: 'A Better cross-platform Android Emulator that works with Xamarin.'
+browser_title: 'A Better Android Emulator'
+comments: true
 ---
-{% include JB/setup %}
 
 Looking for a better Android emulator? Sure you are. I won't even get into how 
 slow the stock Android emulator is. If you use it, you know. If you haven't used 

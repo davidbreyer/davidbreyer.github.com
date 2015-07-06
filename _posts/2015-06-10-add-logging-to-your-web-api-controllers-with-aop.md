@@ -4,8 +4,10 @@ title: "Add Logging to your Web API Controllers with AOP"
 description: ""
 category: Programming
 tags: [Web API, Unity, C#, Dependency Injection, Log4Net]
+meta_description: 'Add Logging to your Web API Controllers with AOP'
+browser_title: 'Add Logging to your Web API Controllers with AOP'
+comments: true
 ---
-{% include JB/setup %}
 
 <br/><br/>
 In part one we [added a log4net log to our Web API project using Unity]({% post_url 2015-06-09-logging-web-api-with-log4net-and-unity %}).

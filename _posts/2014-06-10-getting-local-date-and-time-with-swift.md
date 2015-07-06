@@ -4,9 +4,10 @@ title: "Getting Local Date and Time with Swift"
 description: ""
 category: Programming
 tags: [XCode, Swift, Apple]
+meta_description: 'Getting Local Date and Time with Swift'
+browser_title: 'Getting Local Date and Time with Swift'
+comments: true
 ---
-{% include JB/setup %}
-
 
 The following will display the coordinated universal time and the local system date and time using Swift.
 

@@ -4,8 +4,10 @@ title: "Geotagging your Travels"
 description: ""
 category: Travel
 tags: [train, travel, geotagging]
+meta_description: 'Geotagging your Travels with an iPhone'
+browser_title: 'Geotagging your Travels'
+comments: true
 ---
-{% include JB/setup %}
 
 <img src = "{{ site.url }}/assets/geotagtravel/traintop.png" style="max-width: 625px" />
 

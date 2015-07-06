@@ -4,11 +4,10 @@ title: "AOP using Unity Interceptors in a Web API Project"
 description: ""
 category: Programming
 tags: [Web API, Unity, C#, Dependency Injection, Log4Net]
+meta_description: 'AOP using Unity Interceptors in a C# Web API Project'
+browser_title: 'AOP using Unity Interceptors in a Web API Project'
+comments: true
 ---
-{% include JB/setup %}
-
-## Introduction
-
 In part one we [configured Log4net logging with Unity]({% post_url 2015-06-09-logging-web-api-with-log4net-and-unity %}). In part two we used [AOP to add actions to Web API controllers]({% post_url 2015-06-10-add-logging-to-your-web-api-controllers-with-aop %}) without modifying the controllers code.
 
 In part three we will do something similar to the components of our web API project. Using Unity we will inject behaviors into specific classes, that can execute before and after the method. In this particular example we will use it to log each method of a designated class using our ProfilingInterceptionBehavior.
