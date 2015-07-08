@@ -7,6 +7,8 @@ tags: [c#, Unit Testing, Web API]
 meta_description: 'Create Fake Responses to REST Service Calls in C#'
 browser_title: 'Create Fake Responses to REST Service Calls in C#'
 comments: true
+banner_image: programming-banner-4.jpg
+banner_image_alt: Banner Image
 ---
 
 

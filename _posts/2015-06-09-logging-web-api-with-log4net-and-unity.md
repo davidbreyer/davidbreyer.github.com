@@ -7,6 +7,8 @@ tags: [Unity, C#, Dependency Injection, Log4Net]
 meta_description: 'Configuring Log4Net with Unity in a C# Project'
 browser_title: 'Configuring Log4Net with Unity'
 comments: true
+banner_image: programming-banner-3.jpg
+banner_image_alt: Banner Image
 ---
 
 <br/><br/>

@@ -7,6 +7,8 @@ tags: [angularjs, ng-grid, javascript]
 meta_description: 'Instructions on how to setup filtering on ng-Grid with AngularJS.'
 browser_title: 'Filter ng-Grid on keypress'
 comments: true
+banner_image: programming-banner-6.jpg
+banner_image_alt: Banner Image
 ---
 
 Ng-Grid is the easiest way to add a sortable and filterable grid to your web application. 

@@ -7,6 +7,8 @@ tags: [XCode, Swift, Apple]
 meta_description: 'Basic Array Operations in Apple Swift'
 browser_title: 'Basic Array Operations in Apple Swift'
 comments: true
+banner_image: programming-banner-7.jpg
+banner_image_alt: Banner Image
 ---
 
 Create, Update, and Filter a Generic Array in Apple Swift.

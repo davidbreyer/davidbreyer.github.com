@@ -7,6 +7,8 @@ tags: [Web API, Unity, C#, Dependency Injection, Log4Net]
 meta_description: 'AOP using Unity Interceptors in a C# Web API Project'
 browser_title: 'AOP using Unity Interceptors in a Web API Project'
 comments: true
+banner_image: programming-banner-1.jpg
+banner_image_alt: Banner Image
 ---
 In part one we [configured Log4net logging with Unity]({% post_url 2015-06-09-logging-web-api-with-log4net-and-unity %}). In part two we used [AOP to add actions to Web API controllers]({% post_url 2015-06-10-add-logging-to-your-web-api-controllers-with-aop %}) without modifying the controllers code.
 
