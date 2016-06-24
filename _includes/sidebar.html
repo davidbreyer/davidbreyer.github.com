@@ -50,7 +50,7 @@ styles and `#sidebar-toggle-checkbox` for behavior.
     {% endif %}
 
     <a class="sidebar-nav-item {{ c }}" 
-      href="{{ item.href | prepend: site.baseurl | prepend: site.url }}">
+      href="{{ item.href | prepend: site.baseurl | prepend: site.url | append: '/' }}">
       {{ item.title }}
     </a>
     {% endfor %}
