@@ -11,8 +11,6 @@ banner_image: programming-banner-6.jpg
 banner_image_alt: Banner Image
 ---
 
-# Managing SQL Server Express LocalDB instances
-
 [Microsoft SQL Server 2016 Express LocalDB](https://msdn.microsoft.com/en-us/library/hh510202.aspx) is an version of SQL Server Express targeted to developers. MSSQL LocalDB is not installed by default, it can be installed with Visual Studio 2015 using a custom install. It can also be added to an existing Visual Studio 2015 installation by re-running the installation and choosing to modify the installation by adding [Microsoft SQL Server Data Tools](https://msdn.microsoft.com/en-us/mt186501.aspx).
 
 Using the SQL Server Object Explorer you can access all your local SQL Server Express instances. While you can delete instances from this view, you cannot create or update them to new SQL Server versions.
