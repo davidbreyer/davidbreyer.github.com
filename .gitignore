@@ -1,16 +1,2 @@
-_site/*
-_theme_packages/*
-
 Thumbs.db
 .DS_Store
-
-!.gitkeep
-
-.rbenv-version
-.rvmrc
-
-styles/.sass-cache/
-styles/.sass-cache/*
-.sass-cache/
-.sass-cache/*
-*.scssc
