@@ -6,6 +6,7 @@
   <title>David Breyer</title>
   <meta name="description" content="David Breyer builds application software with a focus on AI, automation, and enterprise systems.">
   <meta name="color-scheme" content="dark">
+  <link rel="icon" href="assets/images/logo.png">
   <style>
     :root {
       --bg: #090b0b;
@@ -81,7 +82,7 @@
     .mark {
       display: inline-flex;
       align-items: center;
-      gap: 11px;
+      gap: 10px;
       color: var(--muted);
       font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
       font-size: 0.82rem;
@@ -89,13 +90,11 @@
       text-decoration: none;
     }
 
-    .mark::before {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      content: "";
-      background: var(--green);
-      box-shadow: 0 0 18px rgba(143, 209, 127, 0.6);
+    .mark img {
+      width: 22px;
+      height: 22px;
+      display: block;
+      image-rendering: auto;
     }
 
     nav {
@@ -343,7 +342,10 @@
 <body>
   <div class="shell">
     <header>
-      <a class="mark" href="./" aria-label="David Breyer home">davidbreyer.com</a>
+      <a class="mark" href="./" aria-label="David Breyer home">
+        <img src="assets/images/logo.png" alt="">
+        <span>davidbreyer.com</span>
+      </a>
       <nav aria-label="Primary">
         <a href="#work">work</a>
         <a href="#projects">projects</a>
