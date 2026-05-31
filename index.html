@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -322,6 +322,12 @@
       font-size: 0.8rem;
     }
 
+    .footer-meta {
+      display: inline-flex;
+      gap: 18px;
+      align-items: center;
+    }
+
     .footer-brand {
       display: inline-flex;
       align-items: center;
@@ -468,7 +474,10 @@
         <img src="/assets/images/logo.png" alt="">
         <span>David Breyer</span>
       </span>
-      <span>built for GitHub Pages</span>
+      <span class="footer-meta">
+        <span>built for GitHub Pages</span>
+        <span>v<span class="version" data-version>20260531-0946</span></span>
+      </span>
     </footer>
   </div>
 </body>

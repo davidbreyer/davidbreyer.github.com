@@ -1,0 +1,5 @@
+#!/bin/sh
+set -e
+
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/update-version.ps1
+git add -- index.html

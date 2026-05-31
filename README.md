@@ -35,6 +35,32 @@ Pushes to `master` deploy through GitHub Pages.
 
 There is no package manager, framework, bundler, or generated `_site` directory. Keep it that way unless the site grows beyond a single static page.
 
+## Version Stamp
+
+The footer includes a version stamp in this format:
+
+```text
+yyyyMMdd-HHmm
+```
+
+Example:
+
+```text
+20260531-0942
+```
+
+The stamp is updated by a pre-commit hook:
+
+- `.githooks/pre-commit` runs before each commit.
+- `scripts/update-version.ps1` rewrites the marked footer version in `index.html`.
+- The hook stages `index.html` again so the updated stamp is included in the commit.
+
+Enable the tracked hooks in a fresh checkout with:
+
+```powershell
+git config core.hooksPath .githooks
+```
+
 ## Maintenance Notes
 
 - Keep copy short and plain.
