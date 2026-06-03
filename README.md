@@ -8,6 +8,7 @@ This used to be a Jekyll blog. It is now a small landing page with no build step
 
 - `index.html` - the landing page.
 - `404.html` - the fallback page for old blog URLs and missing pages.
+- `programming/2016/06/20/...` - preserved static article pages at old Jekyll-style URLs.
 - `CNAME` - keeps GitHub Pages pointed at `www.davidbreyer.com`.
 - `.nojekyll` - tells GitHub Pages to serve the files directly.
 - `assets/images/logo.png` - restored lizard mark used in the page chrome.

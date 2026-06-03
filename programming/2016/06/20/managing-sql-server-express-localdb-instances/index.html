@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>Managing SQL Server Express LocalDB Instances - David Breyer</title>
+  <meta name="description" content="A preserved article about managing SQL Server Express LocalDB instances from the command line.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#090b0b">
+  <link rel="canonical" href="https://www.davidbreyer.com/programming/2016/06/20/managing-sql-server-express-localdb-instances/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.davidbreyer.com/programming/2016/06/20/managing-sql-server-express-localdb-instances/">
+  <meta property="og:title" content="Managing SQL Server Express LocalDB Instances">
+  <meta property="og:description" content="A preserved article about managing SQL Server Express LocalDB instances from the command line.">
+  <meta property="og:image" content="https://www.davidbreyer.com/assets/images/site-preview.png">
+  <style>
+    :root {
+      --bg: #090b0b;
+      --text: #e8ece7;
+      --muted: #9ca59d;
+      --dim: #606a62;
+      --line: #202925;
+      --green: #8fd17f;
+      --panel: #0d1010;
+      --max: 860px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--bg);
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: var(--text);
+      background:
+        linear-gradient(180deg, rgba(143, 209, 127, 0.055), transparent 34rem),
+        var(--bg);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--text);
+      text-underline-offset: 0.25em;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--green);
+      outline-offset: 4px;
+    }
+
+    .shell {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+      padding: 28px 0 72px;
+    }
+
+    header,
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      color: var(--dim);
+      font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+      font-size: 0.82rem;
+    }
+
+    header {
+      padding-bottom: 88px;
+    }
+
+    footer {
+      margin-top: 72px;
+      padding-top: 32px;
+      border-top: 1px solid var(--line);
+    }
+
+    .mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .mark img {
+      width: 26px;
+      height: 26px;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+    }
+
+    nav a,
+    .mark {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    nav a:hover,
+    .mark:hover {
+      color: var(--text);
+    }
+
+    article {
+      display: grid;
+      gap: 34px;
+      min-width: 0;
+    }
+
+    .article-head {
+      padding-bottom: 34px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .meta {
+      margin: 0 0 18px;
+      color: var(--green);
+      font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+      font-size: 0.84rem;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(2.2rem, 7vw, 4.8rem);
+      line-height: 1;
+      letter-spacing: 0;
+      overflow-wrap: break-word;
+    }
+
+    .dek {
+      max-width: 700px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 1.12rem;
+    }
+
+    .note {
+      max-width: 700px;
+      margin: 0;
+      color: var(--dim);
+      font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+      font-size: 0.84rem;
+    }
+
+    .content {
+      max-width: 760px;
+      min-width: 0;
+    }
+
+    h2,
+    h3 {
+      margin: 44px 0 12px;
+      line-height: 1.2;
+    }
+
+    h2 {
+      color: var(--green);
+      font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+    }
+
+    p {
+      margin: 0 0 18px;
+      color: var(--muted);
+    }
+
+    code,
+    pre {
+      font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+    }
+
+    code {
+      color: var(--text);
+    }
+
+    pre {
+      overflow-x: auto;
+      width: 100%;
+      max-width: 100%;
+      margin: 14px 0 24px;
+      border: 1px solid var(--line);
+      padding: 16px;
+      color: var(--text);
+      background: var(--panel);
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 680px) {
+      header,
+      footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      header {
+        padding-bottom: 56px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <a class="mark" href="/" aria-label="David Breyer home">
+        <img src="/assets/images/logo.png" alt="">
+        <span>davidbreyer.com</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="/#projects">projects</a>
+        <a href="/#articles">articles</a>
+        <a href="https://github.com/davidbreyer">github</a>
+      </nav>
+    </header>
+
+    <article>
+      <div class="article-head">
+        <p class="meta">programming / 2016-06-20</p>
+        <h1>Managing SQL Server Express LocalDB Instances</h1>
+        <p class="dek">A preserved article about using <code>sqllocaldb</code> to inspect, create, share, and delete LocalDB instances.</p>
+      </div>
+
+      <p class="note">Originally published June 20, 2016. Preserved in the new static site format with light typo cleanup.</p>
+
+      <div class="content">
+        <p><a href="https://msdn.microsoft.com/en-us/library/hh510202.aspx">Microsoft SQL Server 2016 Express LocalDB</a> is a version of SQL Server Express targeted to developers. MSSQL LocalDB is not installed by default, but it can be installed with Visual Studio 2015 using a custom install. It can also be added to an existing Visual Studio 2015 installation by re-running the installation and choosing to modify the installation by adding <a href="https://msdn.microsoft.com/en-us/mt186501.aspx">Microsoft SQL Server Data Tools</a>.</p>
+
+        <p>Using SQL Server Object Explorer, you can access all your local SQL Server Express instances. While you can delete instances from this view, you cannot create or update them to new SQL Server versions.</p>
+
+        <h2>Command Line</h2>
+
+        <h3>View Existing Instances</h3>
+        <pre><code>C:\&gt;sqllocaldb info
+MSSQLLocalDB
+ProjectsV12
+ProjectsV13</code></pre>
+
+        <h3>View Installed SQL Server Versions</h3>
+        <pre><code>C:\&gt;sqllocaldb versions
+Microsoft SQL Server 2014 (12.0.2000.8)
+Microsoft SQL Server 2016 Release Candidate 0 (RC0) (13.0.1100.286)</code></pre>
+
+        <h3>View Instance Details</h3>
+        <pre><code>L:\&gt;sqllocaldb info "ProjectsV12"
+Name:               ProjectsV12
+Version:            12.0.2000.8
+Shared name:
+Owner:              dbreyer
+Auto-create:        No
+State:              Stopped
+Last start time:    5/25/2016 10:43:53 AM
+Instance pipe name:</code></pre>
+
+        <pre><code>L:\&gt;sqllocaldb info MSSQLLocalDB
+Name:               MSSQLLocalDB
+Version:            13.0.1100.286
+Shared name:
+Owner:              dbreyer
+Auto-create:        Yes
+State:              Running
+Last start time:    5/25/2016 10:43:24 AM
+Instance pipe name: np:\\.\pipe\LOCALDB#0E377D23\tsql\query</code></pre>
+
+        <h2>Create Instance</h2>
+
+        <h3>Latest Version</h3>
+        <pre><code>C:\&gt;sqllocaldb create MyNewInstance
+LocalDB instance "MyNewInstance" created with version 13.0.1100.286.</code></pre>
+
+        <h3>Specific Version</h3>
+        <pre><code>C:\&gt;sqllocaldb create MyNewInstance12 12.0.2000.8
+LocalDB instance "MyNewInstance12" created with version 12.0.2000.8.</code></pre>
+
+        <h3>Auto-Create</h3>
+        <p>The MSSQLLocalDB instance has the auto-create flag set to true. Deleting this instance will cause the instance to be recreated with the latest installed SQL Server version.</p>
+
+        <h3>Create a Shared Instance</h3>
+        <p>Adding a shared instance to an existing LocalDB database will support multiple users connecting to a single instance.</p>
+
+        <p>Connect to a shared instance with <code>.\</code> between <code>(localdb)</code> and the name of the shared instance. For example: <code>(localdb)\.\MyShare</code>.</p>
+
+        <pre><code>sqllocaldb share MyNewInstance "MySharedDB"
+Private LocalDB instance "MyNewInstance" shared with the shared name: "MySharedDB".</code></pre>
+
+        <h2>Delete Instance</h2>
+
+        <p>While it is possible to delete instances from SQL Server Object Explorer, this can also be done from the command line.</p>
+
+        <pre><code>C:\&gt;sqllocaldb delete MyNewInstance12
+LocalDB instance "MyNewInstance12" deleted.</code></pre>
+
+        <p>If you attempt to delete a running instance, you will get the following:</p>
+
+        <pre><code>C:\&gt;sqllocaldb delete MyNewInstance12
+Delete of LocalDB instance "MyNewInstance12" failed because of the following error:
+Requested operation on LocalDB instance cannot be performed because specified instance is currently in use. Stop the instance and try again.</code></pre>
+
+        <p>Use the stop command to close the instance, then rerun the delete command.</p>
+
+        <pre><code>C:\&gt;sqllocaldb stop MyNewInstance12
+LocalDB instance "MyNewInstance12" stopped.</code></pre>
+      </div>
+    </article>
+
+    <footer>
+      <span>David Breyer</span>
+      <span><a href="/">home</a></span>
+    </footer>
+  </div>
+</body>
+</html>
