@@ -2,4 +2,4 @@
 set -e
 
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/update-version.ps1
-git add -- index.html
+git add -- index.html 404.html programming/2016/06/20/managing-sql-server-express-localdb-instances/index.html

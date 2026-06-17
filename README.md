@@ -9,6 +9,9 @@ This used to be a Jekyll blog. It is now a small landing page with no build step
 - `index.html` - the landing page.
 - `404.html` - the fallback page for old blog URLs and missing pages.
 - `programming/2016/06/20/...` - preserved static article pages at old Jekyll-style URLs.
+- `assets/css/site.css` - landing page styles.
+- `assets/css/error.css` - 404 page styles.
+- `assets/css/article.css` - preserved article styles.
 - `CNAME` - keeps GitHub Pages pointed at `www.davidbreyer.com`.
 - `.nojekyll` - tells GitHub Pages to serve the files directly.
 - `assets/images/logo.png` - restored lizard mark used in the page chrome.
@@ -54,7 +57,8 @@ The stamp is updated by a pre-commit hook:
 
 - `.githooks/pre-commit` runs before each commit.
 - `scripts/update-version.ps1` rewrites the marked footer version in `index.html`.
-- The hook stages `index.html` again so the updated stamp is included in the commit.
+- The same script updates stylesheet cache-busting query strings such as `/assets/css/site.css?v=20260531-0942`.
+- The hook stages the affected HTML files again so the updated stamp is included in the commit.
 
 Enable the tracked hooks in a fresh checkout with:
 
@@ -68,3 +72,4 @@ git config core.hooksPath .githooks
 - Keep the lizard mark.
 - Do not reintroduce the old blog, comments, analytics, or social links.
 - Add project links only when there is something real to point at.
+- Keep CSS in static files so the site can use `style-src 'self'` in a Content Security Policy.
