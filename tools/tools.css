@@ -67,6 +67,24 @@
   line-height: 1.5;
 }
 
+.terms-hero {
+  grid-template-columns: minmax(0, 1fr);
+  padding-top: 0;
+  border-top: 0;
+}
+
+.terms-copy {
+  display: grid;
+  gap: 16px;
+  max-width: 760px;
+}
+
+.terms-copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
 @media (max-width: 780px) {
   .tools-hero,
   .tool-grid {
