@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>Lizard Tools | David Breyer</title>
+  <meta name="description" content="Small browser-based tools for formatting, comparing, mocking, de-duplicating, and converting developer data.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#090b0b">
+  <link rel="canonical" href="https://www.davidbreyer.com/tools/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/assets/css/site.css?v=20260616-2141">
+  <link rel="stylesheet" href="/tools/tools.css?v=20260617-0001">
+</head>
+<body>
+  <div class="shell tools-shell">
+    <header>
+      <a class="mark" href="/" aria-label="David Breyer home">
+        <img src="/assets/images/logo.png" alt="">
+        <span>davidbreyer.com</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="/">home</a>
+        <a href="/#projects">projects</a>
+        <a href="/#articles">articles</a>
+        <a href="https://github.com/davidbreyer">github</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="tools-hero" aria-labelledby="tools-title">
+        <div>
+          <h1 id="tools-title">Lizard Tools</h1>
+          <p class="summary">
+            Small static browser tools for API payloads, structured data, duplicate hunting, and date-time glue work.
+          </p>
+          <p class="now-line">all local in the browser · no server-side processing</p>
+        </div>
+
+        <aside class="console tools-console" aria-label="Tool index">
+          <div class="console-head" aria-hidden="true">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <div class="console-body">
+            <p class="line"><span class="prompt">&gt;</span> tools --list</p>
+            <p class="line value">format compare mock duplicate datetime</p>
+            <p class="line comment"># keep the payloads local</p>
+          </div>
+        </aside>
+      </section>
+
+      <section aria-labelledby="toolbox-title">
+        <h2 id="toolbox-title">./toolbox</h2>
+        <div id="toolGrid" class="tool-grid" aria-live="polite">
+          <a class="tool-card" href="https://www.davidbreyer.com/format-lizard/">
+            <span class="tool-number">01</span>
+            <span class="tool-name">Format Lizard</span>
+            <span class="tool-desc">Format JSON, XML, YAML, and CSS in the browser.</span>
+          </a>
+          <a class="tool-card" href="https://www.davidbreyer.com/compare-lizard/">
+            <span class="tool-number">02</span>
+            <span class="tool-name">Compare Lizard</span>
+            <span class="tool-desc">Compare JSON and XML payloads side by side.</span>
+          </a>
+          <a class="tool-card" href="https://www.davidbreyer.com/mock-lizard/">
+            <span class="tool-number">03</span>
+            <span class="tool-name">Mock Lizard</span>
+            <span class="tool-desc">Generate realistic mock API data from sample JSON.</span>
+          </a>
+          <a class="tool-card" href="https://www.davidbreyer.com/duplicate-lizard/">
+            <span class="tool-number">04</span>
+            <span class="tool-name">Duplicate Lizard</span>
+            <span class="tool-desc">Find repeated identifiers and duplicate-like XML entries.</span>
+          </a>
+          <a class="tool-card" href="https://www.davidbreyer.com/datetime-lizard/">
+            <span class="tool-number">05</span>
+            <span class="tool-name">DateTime Lizard</span>
+            <span class="tool-desc">Convert dates for .NET, SQL Server, LINQ, and API work.</span>
+          </a>
+        </div>
+      </section>
+
+      <section aria-labelledby="local-title">
+        <h2 id="local-title">./local</h2>
+        <div>
+          <p class="text-block">
+            These tools are static pages. The work happens in your browser, and the apps are designed around copy, paste, open, save, and move on.
+          </p>
+          <div class="stack" aria-label="Tool traits">
+            <span class="tag">GitHub Pages</span>
+            <span class="tag">client-side</span>
+            <span class="tag">API payloads</span>
+            <span class="tag">developer utilities</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span class="footer-brand">
+        <img src="/assets/images/logo.png" alt="">
+        <span>David Breyer</span>
+      </span>
+      <span class="footer-meta">
+        <span>lizard hub</span>
+        <span>v<span class="version" data-version>20260617-0001</span></span>
+      </span>
+    </footer>
+  </div>
+  <script src="/tools/lizard-tools.js?v=20260617-0001"></script>
+</body>
+</html>
