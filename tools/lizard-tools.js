@@ -29,6 +29,12 @@
       name: "DateTime Lizard",
       url: "https://www.davidbreyer.com/datetime-lizard/",
       description: "Convert dates for .NET, SQL Server, LINQ, and API work."
+    },
+    {
+      id: "delim-lizard",
+      name: "Delim Lizard",
+      url: "https://www.davidbreyer.com/delim-lizard/",
+      description: "Turn pasted values into clean delimited lists for SQL, CSV, JavaScript, and URLs."
     }
   ];
 
