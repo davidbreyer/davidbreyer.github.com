@@ -3,36 +3,42 @@
     {
       id: "format-lizard",
       name: "Format Lizard",
+      symbol: "{ }",
       url: "https://www.davidbreyer.com/format-lizard/",
       description: "Format JSON, XML, YAML, and CSS in the browser."
     },
     {
       id: "compare-lizard",
       name: "Compare Lizard",
+      symbol: "A|B",
       url: "https://www.davidbreyer.com/compare-lizard/",
       description: "Compare JSON and XML payloads side by side."
     },
     {
       id: "mock-lizard",
       name: "Mock Lizard",
+      symbol: "~",
       url: "https://www.davidbreyer.com/mock-lizard/",
       description: "Generate realistic mock API data from sample JSON."
     },
     {
       id: "duplicate-lizard",
       name: "Duplicate Lizard",
+      symbol: "==",
       url: "https://www.davidbreyer.com/duplicate-lizard/",
       description: "Find repeated identifiers and duplicate-like XML entries."
     },
     {
       id: "datetime-lizard",
       name: "DateTime Lizard",
+      symbol: "T+",
       url: "https://www.davidbreyer.com/datetime-lizard/",
       description: "Convert dates for .NET, SQL Server, LINQ, and API work."
     },
     {
       id: "delim-lizard",
       name: "Delim Lizard",
+      symbol: ",;",
       url: "https://www.davidbreyer.com/delim-lizard/",
       description: "Turn pasted values into clean delimited lists for SQL, CSV, JavaScript, and URLs."
     }
@@ -94,18 +100,23 @@
       const card = document.createElement("a");
       const number = document.createElement("span");
       const name = document.createElement("span");
+      const symbol = document.createElement("span");
       const description = document.createElement("span");
 
       card.className = "tool-card";
       card.href = tool.url;
+      card.dataset.tool = tool.id;
       number.className = "tool-number";
       number.textContent = String(index + 1).padStart(2, "0");
       name.className = "tool-name";
       name.textContent = tool.name;
+      symbol.className = "tool-symbol";
+      symbol.textContent = tool.symbol;
+      symbol.setAttribute("aria-hidden", "true");
       description.className = "tool-desc";
       description.textContent = tool.description;
 
-      card.append(number, name, description);
+      card.append(number, name, symbol, description);
       fragment.append(card);
     });
 
