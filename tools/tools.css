@@ -94,6 +94,7 @@
 .tool-card[data-tool="duplicate-lizard"] { --tool-accent: #d6a14b; }
 .tool-card[data-tool="datetime-lizard"] { --tool-accent: #7f9ee8; }
 .tool-card[data-tool="delim-lizard"] { --tool-accent: #df866f; }
+.tool-card[data-tool="todo-lizard"] { --tool-accent: #a986bf; }
 
 .terms-hero {
   grid-template-columns: minmax(0, 1fr);

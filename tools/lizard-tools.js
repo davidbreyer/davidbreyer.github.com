@@ -41,6 +41,13 @@
       symbol: ",;",
       url: "https://www.davidbreyer.com/delim-lizard/",
       description: "Turn pasted values into clean delimited lists for SQL, CSV, JavaScript, and URLs."
+    },
+    {
+      id: "todo-lizard",
+      name: "To Do Lizard",
+      symbol: "[ ]",
+      url: "https://www.davidbreyer.com/todo-lizard/",
+      description: "Keep a practical task list stored locally in the browser."
     }
   ];
 
